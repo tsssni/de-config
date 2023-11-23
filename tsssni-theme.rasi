@@ -1,0 +1,106 @@
+
+
+* {
+  /* Default background color */
+  background-color: transparent;
+  text-color:       #b1b1e8;
+  border-color:     #c1c1e8;
+}
+
+
+window {
+  padding: 1em;
+
+  border:       10px;
+  border-radius: 10px;
+
+  width:  1024px; 
+
+  background-color: #f8f8ffe0;
+}
+
+mainbox {
+  spacing: 0px;
+  children: [inputbar,wrapper-mode-switcher,listview];
+}
+
+element {
+  background: transparent;
+  children: [ element-icon, element-text ];
+}
+element,element-text,element-icon, button {
+    cursor: pointer;
+}
+
+inputbar {
+  margin: 0px 0px 0.5em 0em;
+  spacing: 0.4em;
+  children: [ entry ];
+}
+
+listview, inputbar, message {
+  padding: 0.5em;  
+  border:        10px;
+  border-radius: 10px;
+  background-color: transparent;
+
+  columns: 4;
+  lines:   4;
+}
+listview {
+  border:       0px 10px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+
+element {
+    border:  0;
+    padding:      10px;
+    font:         "Monaspace Neon 12";
+    orientation: vertical;
+}
+element-icon {
+  size: 6em;
+}
+
+element  selected {
+  border:       10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, #b1b1e8aa, #d2dcecaa);
+}
+
+element-text, element-icon {
+  font:             inherit; 
+  horizontal-align: 0.5;
+}
+
+wrapper-mode-switcher {
+    orientation: horizontal;
+
+    expand:     false;
+    spacing:    0;
+    children: [ mode-switcher ];
+}
+
+mode-switcher {
+    border:  0px;
+    spacing: 0px;
+    expand: true;
+}
+button {
+    border:       0px 0px 10px ;
+    horizontal-align: 0.5;
+}
+button selected.normal {
+    margin: 0px;
+    padding: 0px;
+
+    border:       5px 10px 0px ;
+    border-radius:    10px 10px 0 0;
+    background-image: linear-gradient(to bottom, #b1b1e8aa, #d2dcecaa);
+}
+
+entry {
+    placeholder: "input";
+    placeholder-color: #b1b1e8;
+}

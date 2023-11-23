@@ -147,3 +147,4 @@ configuration {
       sorting-method:    "name";
   }
 }
+@theme "tsssni-theme.rasi"
