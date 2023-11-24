@@ -1,8 +1,8 @@
 
 
 * {
-  /* Default background color */
   background-color: transparent;
+  font:         "Monaspace Neon 12";
   text-color:       #b1b1e8;
   border-color:     #c1c1e8;
 }
