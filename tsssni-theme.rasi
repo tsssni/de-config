@@ -3,7 +3,7 @@
 * {
   background-color: transparent;
   font:         "Monaspace Neon 12";
-  text-color:       #b1b1e8;
+  text-color:       #8181e6;
   border-color:     #c1c1e8;
 }
 
