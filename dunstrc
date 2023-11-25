@@ -79,7 +79,7 @@
     # notifications.
     # Set to 0 to disable.
     # If gap_size is greater than 0, this setting will be ignored.
-    separator_height = 2
+    separator_height = 0
 
     # Padding between text and separator.
     padding = 8
@@ -101,7 +101,7 @@
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    gap_size = 5
 
     # Define a color for the separator.
     # possible values are:
@@ -316,6 +316,7 @@
     background = "#1a0b63e0"
     foreground = "#8181e6"
     frame_color = "#f8f8ff"
+    highlight = "#8181e6"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -323,6 +324,7 @@
 [urgency_normal]
     background = "#f8f8ffe0"
     foreground = "#8181e6"
+    highlight = "#7999fc"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -331,6 +333,7 @@
     background = "#ff0055e0"
     foreground = "#f9c00e"
     frame_color = "#ffff00"
+    highlight = "#ffff00"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
