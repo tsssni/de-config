@@ -12,7 +12,7 @@ window {
   padding: 1em;
 
   border:       10px;
-  border-radius: 10px;
+  border-radius: 20px;
 
   width:  1024px; 
 
