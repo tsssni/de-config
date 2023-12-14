@@ -3,20 +3,18 @@
 * {
   background-color: transparent;
   font:         "Monaspace Neon 12";
-  text-color:       #8181e6;
-  border-color:     #c1c1e8;
+  text-color:       #5a5ae8;
 }
 
 
 window {
   padding: 1em;
 
-  border:       10px;
   border-radius: 20px;
 
   width:  1024px; 
 
-  background-color: #f8f8ffe0;
+  background-color: #b1b1e899;
 }
 
 mainbox {
@@ -40,7 +38,6 @@ inputbar {
 
 listview, inputbar, message {
   padding: 0.5em;  
-  border:        10px;
   border-radius: 10px;
   background-color: transparent;
 
@@ -48,13 +45,11 @@ listview, inputbar, message {
   lines:   4;
 }
 listview {
-  border:       0px 10px 10px 10px;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px;
 }
 
 
 element {
-    border:  0;
     padding:      10px;
     font:         "Monaspace Neon 12";
     orientation: vertical;
@@ -64,7 +59,6 @@ element-icon {
 }
 
 element  selected {
-  border:       10px;
   border-radius: 10px;
   background-image: linear-gradient(to bottom, #b1b1e8aa, #d2dcecaa);
 }
@@ -83,24 +77,21 @@ wrapper-mode-switcher {
 }
 
 mode-switcher {
-    border:  0px;
     spacing: 0px;
     expand: true;
 }
 button {
-    border:       0px 0px 10px ;
     horizontal-align: 0.5;
 }
 button selected.normal {
     margin: 0px;
     padding: 0px;
 
-    border:       5px 10px 0px ;
-    border-radius:    10px 10px 0 0;
+    border-radius:    10px 10px 10px 10px;
     background-image: linear-gradient(to bottom, #b1b1e8aa, #d2dcecaa);
 }
 
 entry {
     placeholder: "input";
-    placeholder-color: #b1b1e8;
+    placeholder-color: #5a5ae8;
 }
