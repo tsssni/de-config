@@ -1,9 +1,8 @@
 
-
 * {
   background-color: transparent;
   font:         "Monaspace Neon 12";
-  text-color:       #5a5ae8;
+  text-color:       #ffe8ef;
 }
 
 
@@ -14,7 +13,7 @@ window {
 
   width:  1024px; 
 
-  background-color: #b1b1e899;
+  background-color: #f5c1e999;
 }
 
 mainbox {
@@ -60,7 +59,7 @@ element-icon {
 
 element  selected {
   border-radius: 10px;
-  background-image: linear-gradient(to bottom, #b1b1e8aa, #d2dcecaa);
+  background-image: linear-gradient(to bottom, #d2dcec, #fab6ea);
 }
 
 element-text, element-icon {
@@ -88,10 +87,9 @@ button selected.normal {
     padding: 0px;
 
     border-radius:    10px 10px 10px 10px;
-    background-image: linear-gradient(to bottom, #b1b1e8aa, #d2dcecaa);
+    background-image: linear-gradient(to bottom, #d2dcec, #fab6ea);
 }
 
 entry {
     placeholder: "input";
-    placeholder-color: #5a5ae8;
 }
