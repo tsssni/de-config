@@ -1,8 +1,8 @@
 
 * {
   background-color: transparent;
-  font:         "Monaspace Neon 12";
-  text-color:       #ffe8ef;
+  font: "MonaspiceNe Nerd Font 12";
+  text-color: #ff005599;
 }
 
 
@@ -18,7 +18,7 @@ window {
 
 mainbox {
   spacing: 0px;
-  children: [inputbar,wrapper-mode-switcher,listview];
+  children: [inputbar,listview];
 }
 
 element {
@@ -43,53 +43,39 @@ listview, inputbar, message {
   columns: 4;
   lines:   4;
 }
+
 listview {
   border-radius: 10px;
 }
 
 
 element {
-    padding:      10px;
-    font:         "Monaspace Neon 12";
+    padding: 10px;
     orientation: vertical;
 }
+
 element-icon {
   size: 6em;
 }
 
-element  selected {
+element selected {
   border-radius: 10px;
-  background-image: linear-gradient(to bottom, #d2dcec, #fab6ea);
+  background-image: linear-gradient(to bottom, #d2dcec71, #fab6eaaa);
 }
 
 element-text, element-icon {
-  font:             inherit; 
   horizontal-align: 0.5;
 }
 
-wrapper-mode-switcher {
-    orientation: horizontal;
-
-    expand:     false;
-    spacing:    0;
-    children: [ mode-switcher ];
-}
-
-mode-switcher {
-    spacing: 0px;
-    expand: true;
-}
 button {
     horizontal-align: 0.5;
 }
+
 button selected.normal {
     margin: 0px;
     padding: 0px;
 
-    border-radius:    10px 10px 10px 10px;
+    border-radius:    10px;
     background-image: linear-gradient(to bottom, #d2dcec, #fab6ea);
 }
 
-entry {
-    placeholder: "input";
-}
