@@ -226,7 +226,7 @@
           :class title-label-class
           :halign "center"
           :text title
-          :limit-width "15"))
+          :limit-width "30"))
       (box
         :class artist-class
         (label
