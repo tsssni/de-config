@@ -158,16 +158,17 @@
               :class next-label-class
               (label
                 :text next-icon))))))
-      (box
-        :class music-scale-class
-        (scale
-          :active "true"
-          :min "0"
-          :max length
-          :value position
-          :orientation "h"
-          :onchange "scripts/media.sh --set-position {}"))))
-          
+        (box
+          :class music-scale-class
+          (eventbox
+            :cursor "pointer"
+            (scale
+              :active "true"
+              :min "0"
+              :max length
+              :value position
+              :orientation "h"
+              :onchange "scripts/media.sh --set-position {}")))))
 
 (defwidget bar []
   (box
@@ -274,13 +275,15 @@
           :space-evenly "false"
           :halign "center"
           :valign "center"
-          (scale
-            :width "100"
-            :min "0"
-            :max "100"
-            :value volume
-            :orientation "h"
-            :onchange "scripts/volume.sh --set {}"))))))
+          (eventbox
+              :cursor "pointer"
+            (scale
+              :width "100"
+              :min "0"
+              :max "100"
+              :value volume
+              :orientation "h"
+              :onchange "scripts/volume.sh --set {}")))))))
 
 (defwidget brightness []
   (eventbox
@@ -306,13 +309,17 @@
           :class brightness-scale-class
           :orientation "h"
           :space-evenly "false"
-          (scale
-            :width "100"
-            :min "0"
-            :max "100"
-            :value brightness
-            :orientation "h"
-            :onchange "scripts/brightness.sh --set {}"))))))
+          :halign "center"
+          :valign "center"
+          (eventbox
+            :cursor "pointer"
+            (scale
+              :width "100"
+              :min "0"
+              :max "100"
+              :value brightness
+              :orientation "h"
+              :onchange "scripts/brightness.sh --set {}")))))))
 
 (defwidget battery []
   (eventbox
