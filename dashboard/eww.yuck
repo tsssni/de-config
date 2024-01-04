@@ -355,6 +355,7 @@
 (defwidget network []
   (eventbox
     :cursor "pointer"
+    :onclick "hyprctl dispatch exec nm-connection-editor"
     :onhover "${eww} update network-reveal=true;
               ${eww} update network-button-class=\"light-button\""
     :onhoverlost "${eww} update network-reveal=false;
@@ -365,11 +366,9 @@
       :space-evenly "false"
       (box
         :width 20
-        (button
-          :onclick "hyprctl dispatch exec nm-connection-editor"
-          (label
-            :class network-label-class
-            :text network-icon)))
+        (label
+          :class network-label-class
+          :text network-icon))
       (revealer
         :reveal network-reveal
         :transition "slideright"
@@ -388,6 +387,7 @@
 (defwidget bluetooth []
   (eventbox
     :cursor "pointer"
+    :onclick "hyprctl dispatch exec blueman-manager"
     :onhover "${eww} update bluetooth-reveal=true;
               ${eww} update bluetooth-button-class=\"light-button\""
     :onhoverlost "${eww} update bluetooth-reveal=false;
@@ -398,11 +398,9 @@
       :space-evenly "false"
       (box
         :width 20
-        (button
-          :onclick "hyprctl dispatch exec blueman-manager"
-          (label
-            :class bluetooth-label-class
-            :text bluetooth-icon)))
+        (label
+          :class bluetooth-label-class
+          :text bluetooth-icon))
       (revealer
         :reveal bluetooth-reveal
         :transition "slideright"
