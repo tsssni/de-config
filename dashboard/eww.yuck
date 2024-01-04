@@ -425,18 +425,6 @@
     (box
       :orientation "h"
       :space-evenly "false"
-      (eventbox
-        :cursor "pointer"
-        :onhover "${eww} update poweroff-button-class=\"light-button\""
-        :onhoverlost "${eww} update poweroff-button-class=\"button\""
-        (box
-          :class poweroff-button-class
-          :width 20
-          (button
-            :onclick "systemctl poweroff"
-            (label
-              :class poweroff-label-class
-              :text poweroff-icon))))
       (revealer
         :reveal power-reveal
         :transition "slideright"
@@ -448,16 +436,16 @@
           :valign "fill"
           (eventbox
             :cursor "pointer"
-            :onhover "${eww} update reboot-button-class=\"light-button\""
-            :onhoverlost "${eww} update reboot-button-class=\"button\""
+            :onhover "${eww} update exit-button-class=\"light-button\""
+            :onhoverlost "${eww} update exit-button-class=\"button\""
             (box
-              :class reboot-button-class
+              :class exit-button-class
               :width 20
               (button
-                :onclick "systemctl reboot"
+                :onclick "hyprctl dispatch exit"
                 (label
-                  :class reboot-label-class
-                  :text reboot-icon))))
+                  :class exit-label-class
+                  :text logout-icon))))
           (eventbox
             :cursor "pointer"
             :onhover "${eww} update suspend-button-class=\"light-button\""
@@ -472,13 +460,25 @@
                   :text suspend-icon))))
           (eventbox
             :cursor "pointer"
-            :onhover "${eww} update exit-button-class=\"light-button\""
-            :onhoverlost "${eww} update exit-button-class=\"button\""
+            :onhover "${eww} update reboot-button-class=\"light-button\""
+            :onhoverlost "${eww} update reboot-button-class=\"button\""
             (box
-              :class exit-button-class
+              :class reboot-button-class
               :width 20
               (button
-                :onclick "hyprctl dispatch exit"
+                :onclick "systemctl reboot"
                 (label
-                  :class exit-label-class
-                  :text logout-icon)))))))))
+                  :class reboot-label-class
+                  :text reboot-icon))))))
+      (eventbox
+        :cursor "pointer"
+        :onhover "${eww} update poweroff-button-class=\"light-button\""
+        :onhoverlost "${eww} update poweroff-button-class=\"button\""
+        (box
+          :class poweroff-button-class
+          :width 20
+          (button
+            :onclick "systemctl poweroff"
+            (label
+              :class poweroff-label-class
+              :text poweroff-icon)))))))
