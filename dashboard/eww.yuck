@@ -1,4 +1,7 @@
 (defvar eww "eww -c ~/.config/eww/dashboard")
+(defvar year "2002")
+(defvar month "08")
+(defvar day "08")
 (defvar art-url "")
 (defvar prev-icon "󰒮")
 (defvar next-icon "󰒭")
@@ -19,6 +22,8 @@
 (defvar battery-icon "󰂄")
 
 (defvar bar-class "bar")
+(defvar calendar-class "calendar")
+(defvar calendar-content-class "calendar-content")
 (defvar music-class "music")
 (defvar cover-class "cover")
 (defvar prev-button-class "button")
@@ -58,18 +63,15 @@
 (defvar exit-button-class "button")
 (defvar exit-label-class "exit-label")
 
+(defpoll weekday :interval "0.1s" "scripts/date.sh -a")
+(defpoll hour :interval "0.1s" "scripts/date.sh -H")
+(defpoll minute :interval "0.1s" "scripts/date.sh -M")
 (defpoll second :interval "0.1s" "scripts/date.sh -S")
 (defpoll play-icon :interval "0.1s" "scripts/media.sh --icon")
 (defpoll title :interval "0.1s" "scripts/media.sh --title")
 (defpoll artist :interval "0.1s" "scripts/media.sh --artist")
 (defpoll position :interval "0.1s" "scripts/media.sh --get-position")
 (defpoll length :interval "0.1s" "scripts/media.sh --length")
-(defpoll year :interval "0.1s" "scripts/date.sh -Y")
-(defpoll month :interval "0.1s" "scripts/date.sh -m")
-(defpoll day :interval "0.1s" "scripts/date.sh -d")
-(defpoll weekday :interval "0.1s" "scripts/date.sh -a")
-(defpoll hour :interval "0.1s" "scripts/date.sh -H")
-(defpoll minute :interval "0.1s" "scripts/date.sh -M")
 (defpoll volume :interval "0.1s" "scripts/volume.sh --get")
 (defpoll brightness :interval "0.1s" "scripts/brightness.sh --get")
 (defpoll battery :interval "0.1s" "scripts/battery.sh --get")
@@ -91,6 +93,29 @@
   :stacking "fg"
   :exclusive true
   (bar))
+
+(defwindow calendar
+  :monitor 0
+  :geometry 
+    (geometry 
+      :x "24px" 
+      :y "10px"
+      :width "240px"
+      :height "100px")
+  :stacking "fg"
+  (box
+    :class calendar-class
+    :orientation "h"
+    :valign "fill"
+    :halign "fill"
+    (calendar
+      :class calendar-content-class
+      :day day
+      :month month
+      :year year
+      :show-details "true"
+      :show-heading "true"
+      :show-day-names "true")))
 
 (defwindow music
   :monitor 0
@@ -189,13 +214,14 @@
     (date)))
 
 (defwidget date []
-  (box
-    :class date-button-class
-    :orientation "v"
-    :valign "fill"
-    :halign "fill"
-    (button
-      :onclick "./scripts/calendar.sh"
+  (eventbox
+    :cursor "pointer"
+    :onclick "./scripts/calendar.sh"
+    (box
+      :class date-button-class
+      :orientation "v"
+      :valign "fill"
+      :halign "fill"
       (box
         (label
           :class date-label-class
