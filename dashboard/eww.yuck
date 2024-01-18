@@ -87,7 +87,7 @@
     (geometry 
       :x "10px"
       :y "10px"
-      :width "2000px"
+      :width "98%"
       :height "50px"
       :anchor "top center")
   :stacking "fg"
@@ -121,8 +121,10 @@
   :monitor 0
   :geometry
     (geometry
-      :x "914px"
-      :y "10px")
+      :x "45%"
+      :y "10px"
+      :width "10%"
+      :height "10%")
     (box
       :class music-class
       :orientation "v"
@@ -214,15 +216,15 @@
     (date)))
 
 (defwidget date []
-  (eventbox
-    :cursor "pointer"
-    :onclick "./scripts/calendar.sh"
-    (box
-      :class date-button-class
-      :orientation "v"
-      :valign "fill"
-      :halign "fill"
-      (box
+  (box
+    :class date-button-class
+    :orientation "v"
+    :valign "fill"
+    :halign "fill"
+    (eventbox
+      :cursor "pointer"
+      (button
+        :onclick "./scripts/calendar.sh"
         (label
           :class date-label-class
           :halign "center"
