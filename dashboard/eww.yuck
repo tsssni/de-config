@@ -75,8 +75,8 @@
 (defpoll volume :interval "0.1s" "scripts/volume.sh --get")
 (defpoll brightness :interval "0.1s" "scripts/brightness.sh --get")
 (defpoll battery :interval "0.1s" "scripts/battery.sh --get")
-(defpoll losize-cover :interval "0.1s" "scripts/media.sh --cover --losize")
-(defpoll hisize-cover :interval "0.1s" "scripts/media.sh --cover --hisize")
+(defpoll lores-cover :interval "0.1s" "scripts/media.sh --cover --lores")
+(defpoll hires-cover :interval "0.1s" "scripts/media.sh --cover --hires")
 (defpoll network :interval "0.1s" "scripts/network.sh")
 (defpoll bluetooth-device :interval "0.1s" "scripts/bluetooth.sh")
 
@@ -113,7 +113,7 @@
         (image
           :width "100px"
           :height "100px"
-          :path hisize-cover))
+          :path hires-cover))
       (box
         :orientation "h"
         :halign "center"
@@ -217,7 +217,7 @@
         (button
           :onclick "./scripts/music.sh"
           (image
-            :path losize-cover))))
+            :path lores-cover))))
     (box
       :orientation "v"
       :halign "fill"

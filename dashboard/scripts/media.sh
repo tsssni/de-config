@@ -28,10 +28,10 @@ case $1 in
     fi
 
     case $2 in
-      --losize )
+      --lores )
         echo $image_dir/losize-cover.png
         ;;
-      --hisize )
+      --hires )
         echo $image_dir/hisize-cover.png
         ;;
     esac
