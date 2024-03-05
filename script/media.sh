@@ -1,5 +1,5 @@
-eww="eww -c $HOME/.config/eww/dashboard"
-image_dir="$HOME/.config/eww/dashboard/pictures"
+eww="eww -c $HOME/.config/eww"
+image_dir="$HOME/.config/eww/picture"
 
 case $1 in
   --cover )
@@ -53,7 +53,7 @@ case $1 in
   --get-position )
     position=`playerctl position 2> /dev/null`
     if [[ -z "$position" ]] then
-      position="0"
+      position="0.0"
     fi
     echo $position
     ;;

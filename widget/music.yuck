@@ -1,0 +1,77 @@
+(defpoll play-icon :interval "0.1s" "script/media.sh --icon")
+(defpoll position :interval "0.1s" "script/media.sh --get-position")
+(defpoll length :interval "0.1s" "script/media.sh --length")
+
+(defwindow music
+  :monitor 0
+  :geometry
+    (geometry
+      :x "45%"
+      :y "10px"
+      :width "10%"
+      :height "10%")
+    (box
+      :class "music"
+      :orientation "v"
+      :space-evenly "false"
+      (box
+        :class "cover"
+        :halign "fill"
+        :valign "fill"
+        (image
+          :width "100"
+          :height "100"
+          :path hires-cover))
+      (box
+        :orientation "h"
+        :halign "center"
+        :valign "center"
+        :space-evenly "false"
+        :spacing "10"
+        (eventbox
+          :cursor "pointer"
+          (box
+            :class "button"
+            :width 50
+            :height 50
+            (button
+              :onclick "script/media.sh --prev"
+              (box
+                :class "prev-label"
+                (label
+                  :text "󰒮")))))
+        (eventbox
+          :cursor "pointer"
+          (box
+            :class "button"
+            :width 50
+            :height 50
+            (button
+              :onclick "script/media.sh --toggle"
+              (box
+                :class "play-label"
+                (label
+                  :text play-icon)))))
+        (eventbox
+          :cursor "pointer"
+          (box
+            :class "button"
+            :width 50
+            :height 50
+          (button
+            :onclick "script/media.sh --next"
+            (box
+              :class "next-label"
+              (label
+                :text "󰒭"))))))
+        (box
+          :class "music-scale"
+          (eventbox
+            :cursor "pointer"
+            (scale
+              :active "true"
+              :min "0"
+              :max length
+              :value position
+              :orientation "h"
+              :onchange "script/media.sh --set-position {}")))))
