@@ -34,6 +34,12 @@ case $1 in
       --hires )
         echo $image_dir/hires-cover.png
         ;;
+      --style )
+        echo "
+        background-image: url('picture/hires-cover.png');
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        "
     esac
     ;;
   --title )
