@@ -3,10 +3,18 @@
   padding: 0px;
   border-radius: 10px;
 }
+
 .music-panel {
   background-color: rgba(#f5c1e9, 0.6);
   padding: 0px;
   border-radius: 0px 0px 10px 10px;
+}
+
+.music-panel-button {
+  opacity: 0.6;
+  border-radius: 10px;
+  margin: 3px;
+  padding: 3px;
 }
 
 .prev-label {

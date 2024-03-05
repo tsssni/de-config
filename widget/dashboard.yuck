@@ -16,6 +16,8 @@
 (defpoll second :interval "0.1s" "script/date.sh -S")
 (defpoll title :interval "0.1s" "script/media.sh --title")
 (defpoll artist :interval "0.1s" "script/media.sh --artist")
+(defpoll lores-cover :interval "0.1s" "script/media.sh --cover --lores")
+(defpoll hires-cover :interval "0.1s" "script/media.sh --cover --hires")
 (defpoll volume :interval "0.1s" "script/volume.sh --get")
 (defpoll brightness :interval "0.1s" "script/brightness.sh --get")
 (defpoll battery :interval "0.1s" "script/battery.sh --get")
@@ -37,7 +39,7 @@
 
 (defwidget bar []
   (box
-    :class "bar"
+    :class "dashboard-bar"
     :orientation "h"
     :space-evenly "true"
     :halign "fill"
@@ -55,7 +57,7 @@
 
 (defwidget date []
   (box
-    :class "button"
+    :class "dashboard-button"
     :orientation "v"
     :valign "fill"
     :halign "fill"
@@ -116,7 +118,7 @@
     :onhover "${eww} update volume-reveal=true;"
     :onhoverlost "${eww} update volume-reveal=false;"
     (box
-      :class "button"
+      :class "dashboard-button"
       :orientation "h"
       :space-evenly "false"
       (box
@@ -130,7 +132,7 @@
         :transition "slideright"
         :duration "350ms"
         (box
-          :class "scale"
+          :class "quick-operation-scale"
           :orientation "h"
           :space-evenly "false"
           :halign "center"
@@ -150,7 +152,7 @@
     :onhover "${eww} update brightness-reveal=true;"
     :onhoverlost "${eww} update brightness-reveal=false;"
     (box
-      :class "button"
+      :class "dashboard-button"
       :orientation "h"
       :space-evenly "false"
       (box
@@ -164,7 +166,7 @@
         :transition "slideright"
         :duration "350ms"
         (box
-          :class "scale"
+          :class "quick-operation-scale"
           :orientation "h"
           :space-evenly "false"
           :halign "center"
@@ -184,7 +186,7 @@
     :onhover "${eww} update battery-reveal=true;"
     :onhoverlost "${eww} update battery-reveal=false;"
     (box
-      :class "button"
+      :class "dashboard-button"
       :orientation "h"
       :space-evenly "false"
       (box
@@ -198,7 +200,7 @@
         :transition "slideright"
         :duration "350ms"
         (box
-          :class "scale"
+          :class "quick-operation-scale"
           :orientation "h"
           :space-evenly "false"
           (scale
@@ -215,7 +217,7 @@
     :onhover "${eww} update network-reveal=true;"
     :onhoverlost "${eww} update network-reveal=false;"
     (box
-      :class "button"
+      :class "dashboard-button"
       :orientation "h"
       :space-evenly "false"
       (box
@@ -245,7 +247,7 @@
     :onhover "${eww} update bluetooth-reveal=true;"
     :onhoverlost "${eww} update bluetooth-reveal=false;"
     (box
-      :class "button"
+      :class "dashboard-button"
       :orientation "h"
       :space-evenly "false"
       (box
@@ -287,7 +289,7 @@
           (eventbox
             :cursor "pointer"
             (box
-              :class "button"
+              :class "dashboard-button"
               :width 20
               (button
                 :onclick "hyprctl dispatch exit"
@@ -297,7 +299,7 @@
           (eventbox
             :cursor "pointer"
             (box
-              :class "button"
+              :class "dashboard-button"
               :width 20
               (button
                 :onclick "systemctl suspend"
@@ -307,7 +309,7 @@
           (eventbox
             :cursor "pointer"
             (box
-              :class "button"
+              :class "dashboard-button"
               :width 20
               (button
                 :onclick "systemctl reboot"
@@ -317,7 +319,7 @@
       (eventbox
         :cursor "pointer"
         (box
-          :class "button"
+          :class "dashboard-button"
           :width 20
           (button
             :onclick "systemctl poweroff"

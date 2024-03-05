@@ -1,5 +1,27 @@
-.bar {
+.dashboard-bar {
   background-color: rgba(#f5c1e9, 0.6);
+  border-radius: 10px;
+}
+
+.dashboard-button {
+  opacity: 0.6;
+  border-radius: 10px;
+  margin: 3px;
+  padding: 3px;
+}
+
+.quick-operation-scale {
+  padding: 0px 5px 0px 5px;
+}
+
+.quick-operation-scale scale trough {
+  background-color: #87012e;
+  border-radius: 10px;
+  min-height: 10px;
+}
+
+.quick-operation-scale scale trough highlight {
+  background-color: #ff0055;
   border-radius: 10px;
 }
 

@@ -1,7 +1,4 @@
 (defvar eww "eww -c ~/.config/eww")
 
-(defpoll lores-cover :interval "0.1s" "script/media.sh --cover --lores")
-(defpoll hires-cover :interval "0.1s" "script/media.sh --cover --hires")
-
 (include "widget/dashboard.yuck")
 (include "widget/music.yuck")
