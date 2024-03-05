@@ -23,16 +23,16 @@ case $1 in
         fi
       fi
 
-      convert "$cover" -resize 40x40 "$image_dir/losize-cover.png"
-      convert "$cover" -resize 200x200 -filter Lanczos "$image_dir/hisize-cover.png"
+      convert "$cover" -resize 40x40 "$image_dir/lores-cover.png"
+      convert "$cover" -resize 200x200 -filter Lanczos "$image_dir/hires-cover.png"
     fi
 
     case $2 in
       --lores )
-        echo $image_dir/losize-cover.png
+        echo $image_dir/lores-cover.png
         ;;
       --hires )
-        echo $image_dir/hisize-cover.png
+        echo $image_dir/hires-cover.png
         ;;
     esac
     ;;

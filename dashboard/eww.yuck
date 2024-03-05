@@ -122,8 +122,6 @@
         :spacing "10"
         (eventbox
           :cursor "pointer"
-          :onhover "${eww} update prev-button-class=\"light-button\""
-          :onhoverlost "${eww} update prev-button-class=\"button\""
           (box
             :class prev-button-class
             :width 50
@@ -136,8 +134,6 @@
                   :text prev-icon)))))
         (eventbox
           :cursor "pointer"
-          :onhover "${eww} update play-button-class=\"light-button\""
-          :onhoverlost "${eww} update play-button-class=\"button\""
           (box
             :class play-button-class
             :width 50
@@ -150,8 +146,6 @@
                   :text play-icon)))))
         (eventbox
           :cursor "pointer"
-          :onhover "${eww} update next-button-class=\"light-button\""
-          :onhoverlost "${eww} update next-button-class=\"button\""
           (box
             :class next-button-class
             :width 50
@@ -252,10 +246,8 @@
 
 (defwidget volume []
   (eventbox
-    :onhover "${eww} update volume-reveal=true;
-              ${eww} update volume-button-class=\"light-button\""
-    :onhoverlost "${eww} update volume-reveal=false;
-                  ${eww} update volume-button-class=\"button\""
+    :onhover "${eww} update volume-reveal=true;"
+    :onhoverlost "${eww} update volume-reveal=false;"
     (box
       :class volume-button-class
       :orientation "h"
@@ -288,10 +280,8 @@
 
 (defwidget brightness []
   (eventbox
-    :onhover "${eww} update brightness-reveal=true;
-              ${eww} update brightness-button-class=\"light-button\""
-    :onhoverlost "${eww} update brightness-reveal=false;
-                  ${eww} update brightness-button-class=\"button\""
+    :onhover "${eww} update brightness-reveal=true;"
+    :onhoverlost "${eww} update brightness-reveal=false;"
     (box
       :class brightness-button-class
       :orientation "h"
@@ -324,10 +314,8 @@
 
 (defwidget battery []
   (eventbox
-    :onhover "${eww} update battery-reveal=true;
-              ${eww} update battery-button-class=\"light-button\""
-    :onhoverlost "${eww} update battery-reveal=false;
-                  ${eww} update battery-button-class=\"button\""
+    :onhover "${eww} update battery-reveal=true;"
+    :onhoverlost "${eww} update battery-reveal=false;"
     (box
       :class battery-button-class
       :orientation "h"
@@ -357,10 +345,8 @@
   (eventbox
     :cursor "pointer"
     :onclick "hyprctl dispatch exec nm-connection-editor"
-    :onhover "${eww} update network-reveal=true;
-              ${eww} update network-button-class=\"light-button\""
-    :onhoverlost "${eww} update network-reveal=false;
-                  ${eww} update network-button-class=\"button\""
+    :onhover "${eww} update network-reveal=true;"
+    :onhoverlost "${eww} update network-reveal=false;"
     (box
       :class network-button-class
       :orientation "h"
@@ -389,10 +375,8 @@
   (eventbox
     :cursor "pointer"
     :onclick "hyprctl dispatch exec blueman-manager"
-    :onhover "${eww} update bluetooth-reveal=true;
-              ${eww} update bluetooth-button-class=\"light-button\""
-    :onhoverlost "${eww} update bluetooth-reveal=false;
-                  ${eww} update bluetooth-button-class=\"button\""
+    :onhover "${eww} update bluetooth-reveal=true;"
+    :onhoverlost "${eww} update bluetooth-reveal=false;"
     (box
       :class bluetooth-button-class
       :orientation "h"
@@ -435,8 +419,6 @@
           :valign "fill"
           (eventbox
             :cursor "pointer"
-            :onhover "${eww} update exit-button-class=\"light-button\""
-            :onhoverlost "${eww} update exit-button-class=\"button\""
             (box
               :class exit-button-class
               :width 20
@@ -447,8 +429,6 @@
                   :text logout-icon))))
           (eventbox
             :cursor "pointer"
-            :onhover "${eww} update suspend-button-class=\"light-button\""
-            :onhoverlost "${eww} update suspend-button-class=\"button\""
             (box
               :class suspend-button-class
               :width 20
@@ -459,8 +439,6 @@
                   :text suspend-icon))))
           (eventbox
             :cursor "pointer"
-            :onhover "${eww} update reboot-button-class=\"light-button\""
-            :onhoverlost "${eww} update reboot-button-class=\"button\""
             (box
               :class reboot-button-class
               :width 20
@@ -471,8 +449,6 @@
                   :text reboot-icon))))))
       (eventbox
         :cursor "pointer"
-        :onhover "${eww} update poweroff-button-class=\"light-button\""
-        :onhoverlost "${eww} update poweroff-button-class=\"button\""
         (box
           :class poweroff-button-class
           :width 20
