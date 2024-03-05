@@ -94,29 +94,6 @@
   :exclusive true
   (bar))
 
-(defwindow calendar
-  :monitor 0
-  :geometry 
-    (geometry 
-      :x "24px" 
-      :y "10px"
-      :width "240px"
-      :height "100px")
-  :stacking "fg"
-  (box
-    :class calendar-class
-    :orientation "h"
-    :valign "fill"
-    :halign "fill"
-    (calendar
-      :class calendar-content-class
-      :day day
-      :month month
-      :year year
-      :show-details "true"
-      :show-heading "true"
-      :show-day-names "true")))
-
 (defwindow music
   :monitor 0
   :geometry
@@ -221,14 +198,10 @@
     :orientation "v"
     :valign "fill"
     :halign "fill"
-    (eventbox
-      :cursor "pointer"
-      (button
-        :onclick "./scripts/calendar.sh"
-        (label
-          :class date-label-class
-          :halign "center"
-          :text "${weekday}/${hour}:${minute}:${second}")))))
+    (label
+      :class date-label-class
+      :halign "center"
+      :text "${weekday}/${hour}:${minute}:${second}")))
 
 (defwidget music []
   (box
