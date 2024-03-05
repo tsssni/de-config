@@ -55,7 +55,7 @@
         (eventbox
           :cursor "pointer"
           (box
-            :class "next-button"
+            :class "button"
             :width 50
             :height 50
           (button
