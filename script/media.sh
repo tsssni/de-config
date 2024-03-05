@@ -39,14 +39,14 @@ case $1 in
   --title )
     title=`playerctl metadata xesam:title 2> /dev/null`
     if [[ -z "$title" ]] then
-      title="No title"
+      title="ブルーアーカイブ"
     fi
     echo $title
     ;;
   --artist )
     artist=`playerctl metadata xesam:artist 2> /dev/null`
     if [[ -z "$artist" ]] then
-      artist="No artist"
+      artist="プラナ"
     fi
     echo $artist
     ;;
@@ -64,7 +64,7 @@ case $1 in
   --length )
     length=`playerctl metadata mpris:length 2> /dev/null`
     if [[ -z "$length" ]] then
-      length="0"
+      length="0.0"
     fi
     length=`python -c "print($length/1000000)"`
     echo $length
